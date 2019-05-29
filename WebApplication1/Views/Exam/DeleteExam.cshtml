@@ -1,0 +1,19 @@
+﻿@model ExamViewModel
+
+@{
+    ViewData["Title"] = "DeleteExam";
+}
+
+<h2>DeleteExam</h2>
+
+<div class="text-center">
+    <h2 class="text-danger">You are about to delete the Exam: @Model.name</h2>
+    <h3>Are you sure?</h3>
+</div>
+
+@Html.ActionLink("Cancel", "AllExams", "Exam", null, new { @class = "btn btn-default" })
+@Html.ActionLink("Yes, sure!", "ExamDeleted", "Exam", new { @id = Model.Id }, new { @class = "btn btn-danger" })
+
+
+
+

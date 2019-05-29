@@ -1,0 +1,27 @@
+﻿@model Exam
+@{
+    ViewData["Title"] = "EditExam";
+}
+<h2> Edit Student</h2>
+
+@using (Html.BeginForm("ExamEdited", "Exam", FormMethod.Post))
+{
+    @Html.HiddenFor(n => n.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(n => n.name)
+        @Html.TextBoxFor(e => e.name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => n.name, "", new { @class = "text-danger" })
+
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(n => n.mark)
+        @Html.TextBoxFor(a => a.mark, new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => n.mark, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-default">Save All Changes</button>
+}
+
